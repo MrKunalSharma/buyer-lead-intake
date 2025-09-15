@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Buyer Lead Intake Application
 
-## Getting Started
+A comprehensive real estate buyer lead management system built with Next.js, TypeScript, and Prisma.
 
-First, run the development server:
+## Features Implemented ✅
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Core Features
+- **CRUD Operations**: Create, Read, Update, Delete buyer leads
+- **Authentication**: Simple cookie-based auth with magic link simulation
+- **Validation**: Client and server-side validation using Zod
+- **Pagination**: Server-side pagination with 10 records per page
+- **Search & Filters**: Real-time search with debouncing, filter by city, property type, status, timeline
+- **CSV Import/Export**: 
+  - Import up to 200 leads with validation
+  - Export filtered data to CSV
+- **History Tracking**: Track all changes made to buyer records
+- **Ownership**: Users can only edit/delete their own leads
+- **Rate Limiting**: Prevent abuse with request rate limiting
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Additional Features
+- **Tag Management**: Add/remove tags for buyer categorization
+- **Conditional BHK Field**: BHK only required for Apartments/Villas
+- **Budget Validation**: Ensures max budget ≥ min budget
+- **Optimistic UI Updates**: Smooth user experience
+- **Accessibility**: Basic keyboard navigation and ARIA labels
+- **Error Handling**: User-friendly error messages
+- **Empty States**: Helpful messages when no data
+- **Responsive Design**: Works on mobile and desktop
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Database**: PostgreSQL with Prisma ORM
+- **Validation**: Zod
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks
+- **Forms**: React Hook Form
 
-## Learn More
+## Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd buyer-lead-intake
