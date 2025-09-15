@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 import { ArrowLeft, Trash2, History } from 'lucide-react';
 import Link from 'next/link';
 
-export default function EditBuyerPage({ params }: { params: { id: string } }) {
+export default function EditBuyerPage({ params }: { params: any }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [buyer, setBuyer] = useState<any>(null);
