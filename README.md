@@ -1,6 +1,6 @@
 # Buyer Lead Intake Application
 
-**Live Demo**:https://buyer-lead-intake-ecru.vercel.app
+**Live Demo**: https://buyer-lead-intake-ecru.vercel.app  
 **Assignment Submission for**: ESahayak - Software Development Engineering Internship  
 **GitHub Repository**: https://github.com/MrKunalSharma/buyer-lead-intake
 
