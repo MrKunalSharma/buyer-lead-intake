@@ -18,7 +18,7 @@ export async function GET(
     }
 
     const buyer = await prisma.buyer.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         owner: { select: { name: true, email: true } },
         history: {
@@ -45,7 +45,7 @@ export async function GET(
 // PUT - Update buyer
 export async function PUT(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> } 
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id } = await params;
@@ -73,7 +73,7 @@ export async function PUT(
 
     // Check ownership and concurrency
     const existing = await prisma.buyer.findUnique({
-      where: { id: params.id },
+      where: { id },
       select: { ownerId: true, updatedAt: true },
     });
 
@@ -94,10 +94,10 @@ export async function PUT(
     }
 
     // Get old data for history
-    const oldData = await prisma.buyer.findUnique({ where: { id: params.id } });
+    const oldData = await prisma.buyer.findUnique({ where: { id } });
 
     const buyer = await prisma.buyer.update({
-      where: { id: params.id },
+      where: { id },
       data: validated as any,
     });
 
@@ -145,7 +145,7 @@ export async function DELETE(
     }
 
     const buyer = await prisma.buyer.findUnique({
-      where: { id: params.id },
+      where: { id },
       select: { ownerId: true },
     });
 
@@ -157,7 +157,7 @@ export async function DELETE(
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    await prisma.buyer.delete({ where: { id: params.id } });
+    await prisma.buyer.delete({ where: { id } });
 
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import { buyerSchema } from '@/lib/validations/buyer';
 
 describe('Buyer Validation Tests', () => {
