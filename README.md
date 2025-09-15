@@ -1,5 +1,31 @@
 # Buyer Lead Intake Application
 
+**Live Demo**: [Add Vercel link here if deployed]  
+**Assignment Submission for**: ESahayak - Software Development Engineering Internship
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/MrKunalSharma/buyer-lead-intake.git
+cd buyer-lead-intake
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Add your database URL in .env
+
+# Run database migrations
+npx prisma generate
+npx prisma db push
+
+# Start development server
+npm run dev
+
+# Buyer Lead Intake Application
+
 A comprehensive real estate buyer lead management system built with Next.js, TypeScript, and Prisma.
 
 ## Features Implemented ✅
