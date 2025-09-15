@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 import { FileDown, Plus, Search, Filter, Upload } from 'lucide-react';
 import debounce from 'lodash.debounce';
 
-export default function BuyersPage() {
+function BuyersPage() {  // <-- CHANGED: Removed "export default"
   const router = useRouter();
   const searchParams = useSearchParams();
   
@@ -331,5 +331,14 @@ export default function BuyersPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ADD THIS WRAPPER COMPONENT AT THE BOTTOM
+export default function BuyersPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <BuyersPage />
+    </Suspense>
   );
 }
